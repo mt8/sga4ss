@@ -1,0 +1,30 @@
+service: sga4ss
+
+frameworkVersion: "2.*"
+
+plugins:
+  - serverless-python-requirements
+  - serverless-dotenv-plugin  
+  - serverless-api-gateway-caching  
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+  apiGatewayCaching:
+    enabled: true
+    ttlInSeconds: 60
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  sga4ss:
+    handler: handler.main
+    events:
+      - http:
+          path: sga4ss
+          method: get
+          caching:
+            enabled: true
+          cors: true

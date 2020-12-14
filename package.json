@@ -1,0 +1,16 @@
+{
+  "name": "sga4ss",
+  "version": "1.0.0",
+  "description": "Simple GA Ranking For Shifter Static",
+  "main": "handler.js",
+  "keywords": [
+    "WordPress",
+    "Shifter",
+    "Google Analytics"
+  ],
+  "dependencies": {
+    "serverless-api-gateway-caching": "^1.6.0",
+    "serverless-dotenv-plugin": "^3.1.0",
+    "serverless-python-requirements": "^5.1.0"
+  }
+}
