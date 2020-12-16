@@ -32,12 +32,12 @@ def main(event, context):
         }
 
 def build_GApi_url(token):
-    url  = GA_API_BASE_URL + '?ids=' + os.environ.get('GA_IDS')
+    url  = GA_API_BASE_URL + '?ids=ga%3A' + os.environ.get('GA_IDS')
     url += '&start-date=' + os.environ.get('GA_START_DATE')
     url += '&end-date=' + os.environ.get('GA_END_DATE')
     url += '&metrics=ga%3Apageviews'
     url += '&dimensions=ga%3ApagePath%2Cga%3ApageTitle'
-    url += '&filters=' + os.environ.get('GA_DIMENSION_NAME') + '%3D%3D' + os.environ.get('GA_DIMENSION_VALUE')
+    url += '&filters=ga%3A' + os.environ.get('GA_DIMENSION_NAME') + '%3D%3D' + os.environ.get('GA_DIMENSION_VALUE')
     url += '&sort=-ga%3Apageviews'
     url += '&start-index=1'
     url += '&max-results=' + os.environ.get('GA_MAX_RESULTS')
